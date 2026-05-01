@@ -1,0 +1,114 @@
+.upload-panel { width: 100%; }
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) { .upload-grid { grid-template-columns: 1fr; } }
+
+.dropzone {
+  border: 2px dashed var(--border-bright);
+  border-radius: var(--radius-lg);
+  padding: 40px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  background: var(--bg-card);
+}
+
+.dropzone:hover, .dropzone.active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  box-shadow: var(--accent-glow);
+}
+
+.dropzone-icon {
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  filter: drop-shadow(var(--accent-glow));
+}
+
+.dropzone-title {
+  font-size: 15px; font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.dropzone-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.modality-chips { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+
+.upload-actions {
+  display: flex; gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* Queue */
+.queue-list { display: flex; flex-direction: column; gap: 8px; }
+
+.queue-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+
+.queue-item.done { border-color: rgba(0, 229, 160, 0.25); }
+.queue-item.error { border-color: rgba(255, 90, 122, 0.25); }
+.queue-item.uploading { border-color: var(--border-bright); }
+
+.queue-item-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 6px;
+}
+
+.queue-name {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.queue-size {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.btn-icon {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 16px; line-height: 1;
+  padding: 0 4px;
+}
+.btn-icon:hover { color: var(--red); }
+
+.progress-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+  box-shadow: var(--accent-glow);
+}
+
+.queue-result {
+  font-size: 11px; font-family: var(--font-mono);
+  margin-top: 4px;
+}
+.queue-result.ok { color: var(--green); }
+.queue-result.err { color: var(--red); }

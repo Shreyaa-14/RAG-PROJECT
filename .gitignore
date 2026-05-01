@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+frontend/build/
+
+# Env
+.env
+backend/.env
+
+# Docker volumes
+.docker/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models (large)
+backend/models/
+*.pt
+*.pth
+*.bin

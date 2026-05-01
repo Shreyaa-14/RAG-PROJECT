@@ -1,0 +1,49 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: multimodal-rag-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app   # hot-reload in dev
+      - model_cache:/root/.cache  # cache HuggingFace + Whisper models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+    networks:
+      - rag-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: multimodal-rag-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000/api/v1
+    networks:
+      - rag-net
+
+networks:
+  rag-net:
+    driver: bridge
+
+volumes:
+  model_cache:
