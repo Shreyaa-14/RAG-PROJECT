@@ -29,7 +29,7 @@ A production-grade **Multi-Modal Retrieval Augmented Generation** system support
 │      ├── Build context window                           │
 │      └── Generate response via Groq (llama3-70b)        │
 │                                                         │
-│  KnowledgeGraph    →  In-memory node/edge graph          │
+│  KnowledgeGraph    →  In-memory node/edge graph         │
 └─────────────────────────────────────────────────────────┘
 ```
 

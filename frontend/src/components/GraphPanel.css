@@ -82,3 +82,45 @@
 }
 
 .doc-meta { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+/* ===== Library / Graph Panel Upgrade ===== */
+
+.graph-panel {
+  animation: fadeIn 0.25s ease;
+}
+
+.graph-card,
+.graph-summary,
+.document-card {
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.08);
+  transition: all 0.22s ease;
+}
+
+.graph-card:hover,
+.document-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 30px 75px rgba(15, 23, 42, 0.12);
+}
+
+.graph-title,
+.document-title {
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.graph-stat,
+.stat-card {
+  background: linear-gradient(135deg, #ecfdf5, #eff6ff);
+  border-radius: 18px;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+}
+
+.badge,
+.meta-chip {
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-weight: 700;
+}

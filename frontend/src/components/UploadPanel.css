@@ -112,3 +112,82 @@
 }
 .queue-result.ok { color: var(--green); }
 .queue-result.err { color: var(--red); }
+
+/* ===== Upload Panel Upgrade ===== */
+
+.upload-panel {
+  animation: fadeIn 0.25s ease;
+}
+
+.upload-zone,
+.drop-zone {
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at top, rgba(20, 184, 166, 0.10), transparent 38%),
+    #ffffff !important;
+  border: 2px dashed #cbd5e1 !important;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+  transition: all 0.25s ease;
+}
+
+.upload-zone:hover,
+.drop-zone:hover {
+  border-color: #14b8a6 !important;
+  transform: translateY(-4px);
+  box-shadow: 0 32px 80px rgba(20, 184, 166, 0.16);
+}
+
+.upload-icon {
+  background: linear-gradient(135deg, #ccfbf1, #dbeafe);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 14px 32px rgba(20, 184, 166, 0.18);
+}
+
+.upload-queue,
+.queue-panel {
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 28px 70px rgba(15, 23, 42, 0.09);
+}
+
+.file-item,
+.queue-item {
+  border-radius: 18px !important;
+  transition: all 0.22s ease;
+}
+
+.file-item:hover,
+.queue-item:hover {
+  transform: translateY(-2px);
+}
+
+.btn,
+button {
+  border-radius: 14px;
+  transition: all 0.22s ease;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary,
+.ingest-btn {
+  background: linear-gradient(135deg, #14b8a6, #06b6d4) !important;
+  box-shadow: 0 12px 28px rgba(20, 184, 166, 0.25);
+}
+
+.clear-btn {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+.danger-btn,
+.clear-index-btn {
+  background: #fff1f2 !important;
+  color: #be123c !important;
+  border: 1px solid #fecdd3 !important;
+}
