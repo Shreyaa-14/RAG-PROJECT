@@ -124,3 +124,12 @@
   padding: 5px 10px;
   font-weight: 700;
 }
+.graph-visual-card {
+  margin-bottom: 20px;
+  padding: 18px;
+  overflow: hidden;
+}
+
+.graph-visual-card canvas {
+  border-radius: 18px;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getGraphData } from '../utils/api';
 import './GraphPanel.css';
+import KnowledgeGraphView from "./KnowledgeGraphView";
 
 export default function GraphPanel() {
   const [data, setData] = useState(null);
@@ -34,6 +35,7 @@ export default function GraphPanel() {
 
   return (
     <div className="graph-panel">
+      
       {/* Summary Cards */}
       <div className="stat-row">
         {[
@@ -58,6 +60,11 @@ export default function GraphPanel() {
           </motion.div>
         ))}
       </div>
+
+        <div className="card graph-visual-card">
+  <div className="card-title">Knowledge Graph Visualization</div>
+  <KnowledgeGraphView />
+</div>
 
       {/* Modality Breakdown */}
       <div className="card" style={{ marginBottom: 20 }}>
